@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital watch</title>
+    <title>Chronometer</title>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="watch">
-        <div>
-            <span id="hours">00</span>
-            <span class="time">Hours</span>
+    <div class="chronometer">
+        <div class="column">
+            <div>
+                <span id="hours">00</span>
+                <span class="time">Hours</span>
+            </div>
+            <button>Start</button>
         </div>
-        <div>
-            <span id="minutes">00</span>
-            <span class="time">Minutes</span>
+        <div class="column">
+            <div>
+                <span id="minutes">00</span>
+                <span class="time">Minutes</span>
+            </div>
+            <button>Pause</button>
         </div>
-        <div>
-            <span id="seconds">00</span>
-            <span class="time">Seconds</span>
+        <div class="column">
+            <div>
+                <span id="seconds">00</span>
+                <span class="time">Seconds</span>
+            </div>
+            <button>Reset</button>
         </div>
     </div>
-    <script src="assets/js/style.js"></script>
+    <!--<script src="assets/js/style.js"></script>-->
 </body>
 </html>

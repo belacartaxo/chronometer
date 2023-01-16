@@ -16,16 +16,35 @@ body{
     background-image: radial-gradient(circle at 37.72% -19.64%, #f2ffe4 0, #e2ffe7 10%, #d1ffe8 20%, #c2ffe7 30%, #b3ffe4 40%, #a6fadf 50%, #9bebd8 60%, #93ddd2 70%, #8dd1cc 80%, #89c7c7 90%, #86bfc2 100%);
 }
 
-.watch{
+.chronometer{
     display: flex;
     align-items: center;
     justify-content: space-around;
     box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.567);
-    height: 170px;
+    height: 220px;
     width: 500px;
 }
 
-.watch div{
+.chronometer .column button{
+    display: block;
+    margin: 15px auto;
+    margin-bottom: 0px;
+    background-color: #010101ba;
+    border-radius: 5px;
+    box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.567);
+    color: white;
+    font-size: 18px;
+    border-style: none;
+    padding: 6px 30px;
+}
+
+.chronometer .column button:hover{
+    transition: background-color 0.3s;
+    background-color: #010101d0;
+    cursor: pointer;
+}
+
+.chronometer .column div{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,9 +63,24 @@ body{
 }
 
 @media only screen and (max-width: 600px) {
-    .watch {
-      flex-direction: column;
-      height: 500px;
-      width: 170px;
+    .chronometer{
+        width: 400px;
+        height: 170px;
+    }
+
+    .chronometer .column button{
+        width: 100px;
+        height: 30px;
+        padding: 0px 15px;
+    }
+
+    .chronometer .column div {
+      width: 100px;
+      height: 90px;
+      font-size: 30px;
+    }
+
+    .time{
+        font-size: 15px;
     }
   }
