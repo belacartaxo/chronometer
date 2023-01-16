@@ -12,7 +12,9 @@ let chronometer;
 let second = 0
 
 start.addEventListener('click', function(e){
-    clearInterval(chronometer);
+    start.setAttribute("disabled", "true");
+    pause.removeAttribute("disabled");
+    reset.removeAttribute("disabled");
     for (let value of divPaused){
         value.classList.remove('paused');
     }
@@ -20,6 +22,9 @@ start.addEventListener('click', function(e){
 })    
 
 pause.addEventListener('click', function(e){
+    pause.setAttribute("disabled", "true");
+    start.removeAttribute("disabled");
+    reset.removeAttribute("disabled");
     clearInterval(chronometer);
     for (let value of divPaused){
         value.classList.add('paused');
@@ -27,6 +32,9 @@ pause.addEventListener('click', function(e){
 })
 
 reset.addEventListener('click', function(e){
+    reset.setAttribute("disabled", "true");
+    pause.setAttribute("disabled", "true");
+    start.removeAttribute("disabled");
     for (let value of divPaused){
         value.classList.remove('paused');
     }
@@ -40,17 +48,11 @@ reset.addEventListener('click', function(e){
 function createDate(){
     chronometer = setInterval( function(){
         second++;
-        const date = new Date(second*1000);
-        let hr = date.getHours()-21;
-        let min = date.getMinutes();
-        let sec = date.getSeconds();
-        
-        hr = hr < 10? '0'+hr : hr;
-        min = min < 10? '0'+min : min;
-        sec = sec < 10? '0'+sec : sec;
+        let date = new Date(second*1000);
+        date = date.toLocaleTimeString('pt-BR', {hour12:false, timeZone:'UTC'});
 
-        hour.textContent = hr;
-        minute.textContent = min;
-        seconds.textContent = sec;
+        hour.textContent = date.slice(0,2);
+        minute.textContent = date.slice(3,5);
+        seconds.textContent = date.slice(6,8);
     }, 1000)
 }

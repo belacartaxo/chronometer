@@ -13,7 +13,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: radial-gradient(circle at 37.72% -19.64%, #f2ffe4 0, #e2ffe7 10%, #d1ffe8 20%, #c2ffe7 30%, #b3ffe4 40%, #a6fadf 50%, #9bebd8 60%, #93ddd2 70%, #8dd1cc 80%, #89c7c7 90%, #86bfc2 100%);
+    background: linear-gradient(45deg, rgb(134, 71, 177) 0%, rgb(252, 107, 107) 50%, rgb(253, 186, 91) 100%);
 }
 
 .chronometer{
@@ -35,13 +35,23 @@ body{
     color: white;
     font-size: 18px;
     border-style: none;
-    padding: 6px 30px;
+    padding: 6px 0px;
+    width: 100px;
 }
 
 .chronometer .column button:hover{
     transition: background-color 0.3s;
-    background-color: #010101d0;
+    background-color: #000000d6;
     cursor: pointer;
+}
+
+.chronometer .column button:disabled{
+    background-color: #191919c4;
+    cursor: default;
+}
+
+.chronometer .column button:disabled:hover{
+    background-color: #191919c4;
 }
 
 .chronometer .column div{
@@ -59,7 +69,7 @@ body{
 }
 
 .chronometer .column .paused{
-    color: red;
+    color: rgb(236, 13, 13);
 }
 
 .time{
