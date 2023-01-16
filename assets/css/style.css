@@ -58,6 +58,10 @@ body{
     font-size: 50px;
 }
 
+.chronometer .column .paused{
+    color: red;
+}
+
 .time{
     font-size: 18px;
 }
