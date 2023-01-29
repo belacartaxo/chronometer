@@ -48,11 +48,27 @@ reset.addEventListener('click', function(e){
 function createDate(){
     chronometer = setInterval( function(){
         second++;
+        const date = new Date(second*1000);
+        const dateTimeZone= new Date(00);
+
+        const valHour = date.getHours() - dateTimeZone.getHours();
+        const valMinutes = date.getMinutes();
+        const valSeconds = date.getSeconds();
+        hour.textContent = valHour <10? '0'+valHour : valHour;
+        minute.textContent = valMinutes <10?  '0'+valMinutes : valMinutes;
+        seconds.textContent = valSeconds <10? '0'+valSeconds : valSeconds;
+    }, 1000)
+}
+
+/* date = date.toLocaleTimeString('pt-BR', {hour12:false, timeZone:'UTC'});
+function createDate(){
+    chronometer = setInterval( function(){
+        second++;
         let date = new Date(second*1000);
-        date = date.toLocaleTimeString('pt-BR', {hour12:false, timeZone:'UTC'});
+        console.log(date)
 
         hour.textContent = date.slice(0,2);
         minute.textContent = date.slice(3,5);
         seconds.textContent = date.slice(6,8);
     }, 1000)
-}
+} */
